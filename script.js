@@ -13,6 +13,25 @@ const DomElement = function (selector, height, width, bg, fontSize, text) {
         position: absolute;`
 }
 
+class First {
+    constructor() {
+    }
+    hello() {
+        console.log('Привет я метод родителя');
+    }
+}
+class Second extends First {
+    constructor() {
+        super()
+    }
+    hello() {
+        super.hello()
+        console.log('А я наследуемый метод!');
+    }
+}
+const newClass = new Second()
+newClass.hello()
+
 DomElement.prototype.render = function () {
     // document.body.innerHTML = '';
     let div = document.createElement('div');
